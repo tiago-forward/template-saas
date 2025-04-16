@@ -1,4 +1,7 @@
 import { stripe } from "@/app/lib/stripe";
+import { handleStripeCancelSubscription } from "@/app/server/stripe/handle-cancel";
+import { handleStripePayment } from "@/app/server/stripe/handle-payment";
+import { handleStripeSubscription } from "@/app/server/stripe/handle-subscription";
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -25,7 +28,7 @@ export async function POST(req: NextRequest) {
         }
 
         if (metadata?.price === process.env.STRIPE_SUBSCRIPTION_PRICE_ID) {
-          await handleStripePayment(event);
+          await handleStripeSubscription(event);
         }
         break;
       case "checkout.session.expired": // Expirou o tempo de pagamento
