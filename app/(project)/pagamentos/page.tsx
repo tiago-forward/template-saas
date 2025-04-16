@@ -38,11 +38,7 @@ export default function Pagamentos() {
       <button
         type="submit"
         className="border rounded-md px-2 cursor-pointer"
-        onClick={() =>
-          handleCreateStripePortal({
-            testeId: "123",
-          })
-        }
+        onClick={handleCreateStripePortal}
       >
         Criar Portal de Pagamentos
       </button>
