@@ -62,7 +62,7 @@ export function useStripe() {
     }
   }
 
-  async function handleCreateStripePortal() {
+  async function handleCreateStripePortal(p0: { testeId: string; }) {
     const response = await fetch("/api/stripe/create-portal", {
       method: "POST",
       headers: {

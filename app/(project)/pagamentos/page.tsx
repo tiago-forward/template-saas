@@ -16,27 +16,33 @@ export default function Pagamentos() {
       <button
         type="submit"
         className="border rounded-md px-2 cursor-pointer"
-        onClick={() => createPaymentStripeCheckout({
+        onClick={() =>
+          createPaymentStripeCheckout({
             testeId: "123",
-        })}
+          })
+        }
       >
         Criar Pagamento Stripe
       </button>
       <button
         type="submit"
         className="border rounded-md px-2 cursor-pointer"
-        onClick={() => createSubscriptionStripeCheckout({
+        onClick={() =>
+          createSubscriptionStripeCheckout({
             testeId: "123",
-        })}
+          })
+        }
       >
         Criar Assinatura Stripe
       </button>
       <button
         type="submit"
         className="border rounded-md px-2 cursor-pointer"
-        onClick={() => handleCreateStripePortal({
+        onClick={() =>
+          handleCreateStripePortal({
             testeId: "123",
-        })}
+          })
+        }
       >
         Criar Portal de Pagamentos
       </button>
