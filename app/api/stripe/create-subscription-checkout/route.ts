@@ -23,6 +23,7 @@ export async function POST(req: NextRequest) {
   const metadada = {
     testeId,
     price,
+    userId,
   };
 
   // Criado um cliente na STRIPE para ter referência dele quando for criar o portal
