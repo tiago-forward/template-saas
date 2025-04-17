@@ -13,7 +13,9 @@ export async function POST(req: NextRequest) {
         external_reference: testeId, // Isso impacta na pontuação do Mercado Pago
         metadata: {
           testeId, // Essa variavel é convertida para snake_case -> teste_id
+          userEmail,
         },
+        ...(userEmail && { payer: { email: userEmail } }),
         items: [
           {
             id: "",
@@ -51,7 +53,6 @@ export async function POST(req: NextRequest) {
           pending: `${req.headers.get("origin")}/api/mercado-pago/pending`,
         },
       },
-      ...(userEmail && { payer: { email: userEmail } }),
     });
 
     if (!createdPreference.id) {
