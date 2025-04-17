@@ -1,7 +1,13 @@
 import { useRouter } from "next/navigation";
+import { initMercadoPago } from "@mercadopago/sdk-react";
+import { useEffect } from "react";
 
 export function useMercadoPago() {
   const router = useRouter();
+
+  useEffect(() => {
+    initMercadoPago(process.env.NEXT_PUBLIC_MERCADO_PAGO_PUBLIC_KEY!);
+  }, []);
 
   async function createMercadoPagoCheckout({
     testeId,
