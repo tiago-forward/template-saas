@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       preferenceId: createdPreference.id,
-      init_point: createdPreference.init_point,
+      initPoint: createdPreference.init_point,
     });
   } catch (error) {
     console.error(error);
