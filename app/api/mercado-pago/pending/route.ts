@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
   });
 
   if (paymentData.status === "approved" || paymentData.date_approved !== null) {
-    return NextResponse.json(new URL(`success`, req.url));
+    return NextResponse.json(new URL(`/success`, req.url));
   }
 
   return NextResponse.json(new URL(`/failure`, req.url));
